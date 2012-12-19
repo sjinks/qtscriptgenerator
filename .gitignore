@@ -1,0 +1,8 @@
+/generated_cpp
+Makefile
+Makefile.Debug
+Makefile.Release
+*.log
+*.tmp
+/generator/generator
+/generator/release
