@@ -4,6 +4,7 @@
 
     <enum-type name="QWebSettings::FontFamily"/>
     <enum-type name="QWebSettings::FontSize"/>
+    <enum-type name="QWebSettings::ThirdPartyCookiePolicy"/>
     <enum-type name="QWebSettings::WebGraphic"/>
     <enum-type name="QWebSettings::WebAttribute">
         <reject-enum-value name="LocalStorageEnabled"/>

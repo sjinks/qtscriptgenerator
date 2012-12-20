@@ -471,6 +471,7 @@
   <enum-type name="QEasingCurve::Type"/>
   <enum-type name="QHistoryState::HistoryType"/>
   <enum-type name="QState::ChildMode"/>
+  <enum-type name="QState::RestorePolicy"/>
   <enum-type name="QStateMachine::Error"/>
   <enum-type name="QStateMachine::EventPriority"/>
   <enum-type name="QStateMachine::RestorePolicy"/>
@@ -512,9 +513,12 @@
   <enum-type name="QFile::Permission" flags="QFile::Permissions"/>
   <enum-type name="QIODevice::OpenModeFlag" flags="QIODevice::OpenMode"/>
   <enum-type name="QLibraryInfo::LibraryLocation"/>
+  <enum-type name="QLocale::CurrencySymbolFormat"/>
   <enum-type name="QLocale::FormatType"/>
   <enum-type name="QLocale::NumberOption" flags="QLocale::NumberOptions"/>
   <enum-type name="QLocale::MeasurementSystem"/>
+  <enum-type name="QLocale::Script"/>
+  <enum-type name="QLocale::QuotationStyle"/>
   <enum-type name="QMutex::RecursionMode"/>
   <enum-type name="QProcess::ExitStatus"/>
   <enum-type name="QProcess::ProcessChannel"/>
@@ -536,8 +540,10 @@
   <enum-type name="QTimeLine::CurveShape"/>
   <enum-type name="QTimeLine::Direction"/>
   <enum-type name="QTimeLine::State"/>
+  <enum-type name="QUrl::ComponentFormattingOption" flags="QUrl::ComponentFormattingOptions"/>
   <enum-type name="QUrl::FormattingOption" flags="QUrl::FormattingOptions"/>
   <enum-type name="QUrl::ParsingMode"/>
+  <enum-type name="QUrl::UrlFormattingOption"/>
   <enum-type name="QUuid::Variant"/>
   <enum-type name="QUuid::Version"/>
   <enum-type name="Qt::SizeHint"/>

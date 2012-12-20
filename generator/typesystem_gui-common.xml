@@ -97,6 +97,7 @@
   
 
   <enum-type name="QStyleOptionTabBarBaseV2::StyleOptionVersion" />
+  <enum-type name="QStyleOptionFrame::FrameFeature" flags="QStyleOptionFrame::FrameFeatures" />
   <enum-type name="QTabBar::SelectionBehavior" />
   <enum-type name="QTabBar::ButtonPosition" />
   <enum-type name="QInputDialog::InputMode" />
@@ -104,6 +105,7 @@
   <enum-type name="QFontDialog::FontDialogOption" flags="QFontDialog::FontDialogOptions" />
   <enum-type name="QColorDialog::ColorDialogOption" flags="QColorDialog::ColorDialogOptions" />
   <enum-type name="QAbstractItemDelegate::EndEditHint"/>
+  <enum-type name="QAbstractItemModel::LayoutChangeHint"/>
   <enum-type name="QAbstractItemView::CursorAction"/>
   <enum-type name="QAbstractItemView::DragDropMode"/>
   <enum-type name="QAbstractItemView::DropIndicatorPosition"/>
@@ -121,6 +123,7 @@
   <enum-type name="QAbstractSpinBox::CorrectionMode"/>
   <enum-type name="QAbstractSpinBox::StepEnabledFlag" flags="QAbstractSpinBox::StepEnabled"/>
   <enum-type name="QAccessible::Event"/>
+  <enum-type name="QAccessible::InterfaceType"/>
   <enum-type name="QAccessible::Method"/>
   <enum-type name="QAccessible::RelationFlag" flags="QAccessible::Relation"/>
   <enum-type name="QAccessible::Role"/>
@@ -129,6 +132,7 @@
   <enum-type name="QDesktopServices::StandardLocation" />
   <enum-type name="QDirModel::Roles"/>
   <enum-type name="QFont::Capitalization" />
+  <enum-type name="QFont::HintingPreference" />
   <enum-type name="QFont::SpacingType" />
   <enum-type name="QGraphicsItem::CacheMode" />
   <enum-type name="QMdiArea::AreaOption" flags="QMdiArea::AreaOptions"/>
@@ -210,6 +214,7 @@
   <enum-type name="QGraphicsView::ViewportUpdateMode"/>
   <enum-type name="QIcon::Mode"/>
   <enum-type name="QIcon::State"/>
+  <enum-type name="QIconEngine::IconEngineHook"/>
   <enum-type name="QImage::Format"/>
   <enum-type name="QImage::InvertMode"/>
   <enum-type name="QImageIOHandler::ImageOption"/>
@@ -341,6 +346,7 @@
   <enum-type name="QStyleOptionTab::SelectedPosition"/>
   <enum-type name="QStyleOptionTab::StyleOptionType"/>
   <enum-type name="QStyleOptionTab::StyleOptionVersion"/>
+  <enum-type name="QStyleOptionTab::TabFeature" flags="QStyleOptionTab::TabFeatures"/>
   <enum-type name="QStyleOptionTab::TabPosition"/>
   <enum-type name="QStyleOptionTabBarBase::StyleOptionType"/>
   <enum-type name="QStyleOptionTabBarBase::StyleOptionVersion"/>
@@ -353,8 +359,10 @@
   <enum-type name="QStyleOptionToolBar::StyleOptionVersion"/>
   <enum-type name="QStyleOptionToolBar::ToolBarFeature" flags="QStyleOptionToolBar::ToolBarFeatures"/>
   <enum-type name="QStyleOptionToolBar::ToolBarPosition"/>
+  <enum-type name="QStyleOptionToolBox::SelectedPosition"/>
   <enum-type name="QStyleOptionToolBox::StyleOptionType"/>
   <enum-type name="QStyleOptionToolBox::StyleOptionVersion"/>
+  <enum-type name="QStyleOptionToolBox::TabPosition"/>
   <enum-type name="QStyleOptionToolButton::StyleOptionType"/>
   <enum-type name="QStyleOptionToolButton::StyleOptionVersion"/>
   <enum-type name="QStyleOptionToolButton::ToolButtonFeature" flags="QStyleOptionToolButton::ToolButtonFeatures">
@@ -363,6 +371,8 @@
   <enum-type name="QStyleOptionViewItem::Position"/>
   <enum-type name="QStyleOptionViewItem::StyleOptionType"/>
   <enum-type name="QStyleOptionViewItem::StyleOptionVersion"/>
+  <enum-type name="QStyleOptionViewItem::ViewItemFeature" flags="QStyleOptionViewItem::ViewItemFeatures"/>
+  <enum-type name="QStyleOptionViewItem::ViewItemPosition"/>
   <enum-type name="QStyleOptionViewItemV2::StyleOptionVersion"/>
   <enum-type name="QStyleOptionViewItemV2::ViewItemFeature" flags="QStyleOptionViewItemV2::ViewItemFeatures"/>
   <enum-type name="QSystemTrayIcon::ActivationReason"/>
@@ -373,6 +383,7 @@
   <enum-type name="QTableWidgetItem::ItemType"/>
   <enum-type name="QTabletEvent::PointerType"/>
   <enum-type name="QTabletEvent::TabletDevice"/>
+  <enum-type name="QTextBlockFormat::LineHeightTypes"/>
   <enum-type name="QTextCharFormat::UnderlineStyle"/>
   <enum-type name="QTextCharFormat::VerticalAlignment"/>
   <enum-type name="QTextCursor::MoveMode"/>

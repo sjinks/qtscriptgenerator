@@ -27,11 +27,14 @@
   <enum-type name="QUdpSocket::BindFlag" flags="QUdpSocket::BindMode"/>
   <enum-type name="QUrlInfo::PermissionSpec"/>
   <enum-type name="QHostInfo::HostInfoError"/>
+  <enum-type name="QSsl::AlternativeNameEntryType"/>
   <enum-type name="QSsl::KeyType"/>
   <enum-type name="QSsl::EncodingFormat"/>
   <enum-type name="QSsl::KeyAlgorithm"/>
   <enum-type name="QSsl::AlternateNameEntryType"/>
+  <enum-type name="QSsl::SslOption"/>
   <enum-type name="QSsl::SslProtocol"/>
+  <enum-type name="QLocalServer::SocketOption" flags="QLocalServer::SocketOptions"/>
   <enum-type name="QLocalSocket::LocalSocketError"/>
   <enum-type name="QLocalSocket::LocalSocketState"/>
   <enum-type name="QNetworkAccessManager::NetworkAccessibility"/>
