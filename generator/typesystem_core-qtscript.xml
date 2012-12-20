@@ -79,6 +79,18 @@
 
     <rejection class="QByteArray" function-name="contains"/>
 
+  <object-type name="QEvent">
+    <modify-function signature="operator=(QEvent)" remove="all"/>
+    <modify-function signature="QEvent(QEvent)">
+      <modify-argument index="1">
+        <replace-type modified-type="QEvent*"/>
+        <conversion-rule class="native">
+        QEvent &amp; %out% = *qscriptvalue_cast&lt;QEvent*&gt;(%in%);
+        </conversion-rule>
+      </modify-argument>
+    </modify-function>
+  </object-type>
+
   <value-type name="QFileInfo">
     <modify-function signature="QFileInfo(QFile)">
       <modify-argument index="1">

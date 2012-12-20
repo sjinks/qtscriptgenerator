@@ -1852,7 +1852,17 @@
     <!--### Obsolete in 4.3-->
   </object-type>
 
-  <object-type name="QEvent" polymorphic-base="yes" polymorphic-id-expression="%1-&gt;type() == QEvent::None"/>
+  <object-type name="QEvent" polymorphic-base="yes" polymorphic-id-expression="%1-&gt;type() == QEvent::None">
+    <modify-function signature="operator=(QEvent)" remove="all"/>
+    <modify-function signature="QEvent(QEvent)">
+      <modify-argument index="1">
+        <replace-type modified-type="QEvent*"/>
+        <conversion-rule class="native">
+        QEvent &amp; %out% = *qscriptvalue_cast&lt;QEvent*&gt;(%in%);
+        </conversion-rule>
+      </modify-argument>
+    </modify-function>
+  </object-type>
   <object-type name="QChildEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::ChildAdded || %1-&gt;type() == QEvent::ChildPolished || %1-&gt;type() == QEvent::ChildRemoved">
     <modify-field name="c" read="false" write="false"/>
   </object-type>
