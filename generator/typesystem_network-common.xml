@@ -5,6 +5,8 @@
 
   <enum-type name="QNetworkProxy::Capability" flags="QNetworkProxy::Capabilities" />
   <enum-type name="QAbstractSocket::NetworkLayerProtocol" />
+  <enum-type name="QAbstractSocket::PauseMode" />
+  <enum-type name="QAbstractSocket::BindFlag" />
   <enum-type name="QNetworkProxyQuery::QueryType" />
   <enum-type name="QAbstractSocket::SocketError" />
   <enum-type name="QAbstractSocket::SocketState" />
