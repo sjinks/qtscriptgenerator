@@ -518,10 +518,12 @@
   <enum-type name="Qt::ConnectionType"/>
   <enum-type name="Qt::ContextMenuPolicy"/>
   <enum-type name="Qt::Corner"/>
+  <enum-type name="Qt::CursorMoveStyle"/>
   <enum-type name="Qt::DayOfWeek"/>
   <enum-type name="Qt::DockWidgetAreaSizes"/>
   <enum-type name="Qt::DropAction" flags="Qt::DropActions"/>
   <enum-type name="Qt::FillRule"/>
+  <enum-type name="Qt::FindChildOption" flags="Qt::FindChildOptions"/>
   <enum-type name="Qt::FocusPolicy"/>
   <enum-type name="Qt::FocusReason"/>
   <enum-type name="Qt::GlobalColor"/>
@@ -538,6 +540,7 @@
   <enum-type name="Qt::PenCapStyle"/>
   <enum-type name="Qt::PenJoinStyle"/>
   <enum-type name="Qt::PenStyle"/>
+  <enum-type name="Qt::ScreenOrientation" flags="Qt::ScreenOrientations"/>
   <enum-type name="Qt::ScrollBarPolicy"/>
   <enum-type name="Qt::ShortcutContext"/>
   <enum-type name="Qt::SortOrder"/>
@@ -545,6 +548,7 @@
   <enum-type name="Qt::TextFlag"/>
   <enum-type name="Qt::TextFormat"/>
   <enum-type name="Qt::TextInteractionFlag" flags="Qt::TextInteractionFlags"/>
+  <enum-type name="Qt::TimerType"/>
   <enum-type name="Qt::TimeSpec"/>
   <enum-type name="Qt::ToolBarAreaSizes"/>
   <enum-type name="Qt::ToolButtonStyle"/>
