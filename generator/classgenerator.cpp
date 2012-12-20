@@ -1052,7 +1052,8 @@ void maybeDeclareMetaType(QTextStream &stream, const QString &typeName,
     if (name.contains(QLatin1Char(','))) {
         // need to expand the Q_DECLARE_METATYPE macro manually,
         // otherwise the compiler will choke
-        stream << "template <> \\" << endl
+        stream << "#if QT_VERSION < 0x050000" << endl
+               << "template <> \\" << endl
                << "struct QMetaTypeId< " << name << " > \\" << endl
                << "{ \\" << endl
                << "    enum { Defined = 1 }; \\" << endl
@@ -1063,7 +1064,23 @@ void maybeDeclareMetaType(QTextStream &stream, const QString &typeName,
                << "            metatype_id = qRegisterMetaType< " << name << " >(\"" << name << "\"); \\" << endl
                << "        return metatype_id; \\" << endl
                << "    } \\" << endl
-               << "};" << endl;
+               << "};" << endl
+               << "#else // QT_VERSION < 0x050000" << endl
+               << "template <> \\" << endl
+               << "struct QMetaTypeId< " << name << " >" << endl
+               << "{" << endl
+               << "    enum { Defined = 1 };" << endl
+               << "    static int qt_metatype_id()" << endl
+               << "    {" << endl
+               << "        static QBasicAtomicInt metatype_id = Q_BASIC_ATOMIC_INITIALIZER(0);" << endl
+               << "        if (const int id = metatype_id.loadAcquire())" << endl
+               << "            return id;" << endl
+               << "        const int newId = qRegisterMetaType< " << name << " >(\"" << name << "\", reinterpret_cast< " << name << " *>(quintptr(-1)));" << endl
+               << "        metatype_id.storeRelease(newId);" << endl
+               << "        return newId;" << endl
+               << "    }" << endl
+               << "};" << endl
+               << "#endif" << endl;
     } else {
         stream << "Q_DECLARE_METATYPE(" << name << ")" << endl;
     }

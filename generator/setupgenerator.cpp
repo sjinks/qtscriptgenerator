@@ -271,6 +271,10 @@ void SetupGenerator::generate()
             // plugin class declaration
             s << "class " << packName << "_ScriptPlugin : public QScriptExtensionPlugin" << endl
               << "{" << endl
+              << "    Q_OBJECT" << endl
+              << "#if QT_VERSION >= 0x050000" << endl
+              << "    Q_PLUGIN_METADATA(IID \"org.qt-project.Qt.QScriptExtensionInterface\")" << endl
+              << "#endif" << endl
               << "public:" << endl
               << "    QStringList keys() const;" << endl
               << "    void initialize(const QString &key, QScriptEngine *engine);" << endl
@@ -324,8 +328,10 @@ void SetupGenerator::generate()
               << "    }" << endl
               << "}" << endl << endl;
 
-            s << "Q_EXPORT_STATIC_PLUGIN(" << packName << "_ScriptPlugin)" << endl
-              << "Q_EXPORT_PLUGIN2(qtscript_" << packName.toLower() << ", " << packName << "_ScriptPlugin)" << endl;
+            s << "#if QT_VERSION < 0x050000" << endl
+              << "Q_EXPORT_STATIC_PLUGIN(" << packName << "_ScriptPlugin)" << endl
+              << "Q_EXPORT_PLUGIN2(qtscript_" << packName.toLower() << ", " << packName << "_ScriptPlugin)" << endl
+              << "#endif" << endl;
 
             if (pluginFile.done())
                 ++m_num_generated_written;
