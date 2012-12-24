@@ -545,7 +545,7 @@
   <enum-type name="QTimeLine::Direction"/>
   <enum-type name="QTimeLine::State"/>
   <enum-type name="QUrl::ComponentFormattingOption" flags="QUrl::ComponentFormattingOptions"/>
-  <enum-type name="QUrl::FormattingOption" flags="QUrl::FormattingOptions"/>
+<!--  <enum-type name="QUrl::FormattingOption" flags="QUrl::FormattingOptions"/> --> <!--### Not ijn Qt 5.0 -->
   <enum-type name="QUrl::ParsingMode"/>
   <enum-type name="QUrl::UrlFormattingOption"/>
   <enum-type name="QUuid::Variant"/>
@@ -2125,7 +2125,7 @@
   </object-type>
 
   <object-type name="QTextStream">
-    <modify-function signature="QTextStream(QByteArray *, QFlags&lt;QIODevice::OpenModeFlag&gt;)">
+    <modify-function signature="QTextStream(QByteArray*,QFlags&lt;QIODevice::OpenModeFlag&gt;)">
       <remove/>
     </modify-function>
     <modify-function signature="QTextStream(QString*,QFlags&lt;QIODevice::OpenModeFlag&gt;)">
@@ -2158,6 +2158,9 @@
     <modify-function signature="operator&lt;&lt;(unsigned short)">
       <remove/>
     </modify-function>
+    <modify-function signature="operator&lt;&lt;(const QLatin1String&amp;)">
+      <remove/>
+    </modify-function>
     <modify-function signature="operator&gt;&gt;(qulonglong&amp;)">
       <remove/>
     </modify-function>
@@ -2180,6 +2183,9 @@
       <remove/>
     </modify-function>
     <modify-function signature="operator&gt;&gt;(QString&amp;)">
+      <remove/>
+    </modify-function>
+    <modify-function signature="operator&gt;&gt;(QLatin1String&amp;)">
       <remove/>
     </modify-function>
 
