@@ -421,8 +421,13 @@
     <modify-function signature="escape(const QString&amp;)" remove="all" />
     <modify-function signature="convertFromPlainText(const QString &amp;, Qt::WhiteSpaceMode)" remove="all" />
     <extra-includes>
-      <include file-name="QGesture" location="global"/>
+      <!-- <include file-name="QGesture" location="global"/> --> <!--### Not needed in Qt 5.0 -->
+      <include file-name="Qt" location="global"/>
     </extra-includes>
+    <inject-code class="native" position="beginning">
+    Q_DECLARE_METATYPE(Qt::GestureState)
+    Q_DECLARE_METATYPE(Qt::GestureType)
+    </inject-code>
   </namespace-type>
 
   <enum-type name="QDate::MonthNameType" />
@@ -981,6 +986,7 @@
 
   <object-type name="QCryptographicHash"/>
   <object-type name="QLibraryInfo"/>
+  <object-type name="QBasicMutex"/>
   <object-type name="QMutex"/>
   <object-type name="QSemaphore"/>
   <object-type name="QSocketNotifier"/>
