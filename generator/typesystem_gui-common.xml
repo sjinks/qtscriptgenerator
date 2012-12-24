@@ -4729,6 +4729,9 @@
     <modify-function signature="setMatrixEnabled(bool)" remove="all"/> <!--### Obsolete in 4.3-->
   </object-type>
 
+  <object-type name="QGuiApplication">
+  </object-type>
+
   <object-type name="QApplication">
     <extra-includes>
       <include file-name="QBasicTimer" location="global"/>
