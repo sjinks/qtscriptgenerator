@@ -511,6 +511,10 @@
   <enum-type name="QFile::FileError"/>
   <enum-type name="QFile::MemoryMapFlags"/>
   <enum-type name="QFile::Permission" flags="QFile::Permissions"/>
+  <enum-type name="QFileDevice::FileError"/>
+  <enum-type name="QFileDevice::FileHandleFlag" flags="QFileDevice::FileHandleFlags"/>
+  <enum-type name="QFileDevice::MemoryMapFlags"/>
+  <enum-type name="QFileDevice::Permission" flags="QFileDevice::Permissions"/>
   <enum-type name="QIODevice::OpenModeFlag" flags="QIODevice::OpenMode"/>
   <enum-type name="QLibraryInfo::LibraryLocation"/>
   <enum-type name="QLocale::CurrencySymbolFormat"/>
@@ -1473,6 +1477,13 @@
     <modify-function signature="decodeName(const char*)" remove="all"/>
     <modify-function signature="map(qint64,qint64,QFile::MemoryMapFlags)" remove="all"/>
     <modify-function signature="unmap(uchar*)" remove="all"/>
+  </object-type>
+
+  <object-type name="QFileDevice">
+    <modify-function signature="map(qint64,qint64,QFile::MemoryMapFlags)" remove="all"/>
+    <!-- Can't provide same API and performance -->
+    <modify-function signature="unmap(uchar*)" remove="all"/>
+    <!-- Can't provide same API and performance -->
   </object-type>
 
   <object-type name="QIODevice">
