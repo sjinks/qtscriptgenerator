@@ -1045,7 +1045,7 @@
     <modify-function signature="addData(const char*,int)" remove="all"/>
   </object-type>
 
-
+<!--
   <value-type name="QtScriptFuture">
     <modify-function signature="operator==(const QFuture &amp;)const">
         <modify-argument index="1">
@@ -1134,7 +1134,7 @@
         </modify-argument>
     </modify-function>       
   </object-type>
-
+-->
 
   <!-- QXMLStream stream stuff. This was moved from QtXml to QtCore in 4.4 -->
 
