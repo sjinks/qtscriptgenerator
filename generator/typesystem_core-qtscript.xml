@@ -118,6 +118,14 @@
         </conversion-rule>            
       </modify-argument>
     </modify-function>
+    <modify-function signature="createNativeFile(QFile&amp;)">
+      <modify-argument index="1">
+        <replace-type modified-type="QFile*"/>
+        <conversion-rule class="native">
+        QFile &amp; %out% = *qscriptvalue_cast&lt;QFile*&gt;(%in%);
+        </conversion-rule>            
+      </modify-argument>
+    </modify-function>
   </object-type>
 
   <value-type name="QLocale">
