@@ -1715,6 +1715,7 @@
 
     <extra-includes>
       <include file-name="QVarLengthArray" location="global"/>
+      <include file-name="QThread" location="global"/>
     </extra-includes>
 
   
