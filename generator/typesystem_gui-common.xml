@@ -16,6 +16,7 @@
   <rejection class="QAbstractUndoItem"/>
   <rejection class="QAccessibleApplication"/>
   <rejection class="QBrushData"/>
+  <rejection class="QGraphicsEffectSource"/>
   <rejection class="QImageTextKeyLang"/>
   <rejection class="QItemEditorCreator"/>
   <rejection class="QLibrary"/>
@@ -907,6 +908,9 @@
   </value-type>
 
   <value-type name="QFontInfo" delete-in-main-thread="yes" expense-cost="1" expense-limit="1000">
+    <extra-includes>
+      <include file-name="fontprivate.h" location="local"/>
+    </extra-includes>
     <custom-constructor>
     return new QFontInfo(*copy);
     </custom-constructor>
@@ -1124,6 +1128,9 @@
   </value-type>
 
   <value-type name="QFontMetricsF" delete-in-main-thread="yes" expense-cost="1" expense-limit="1000">
+    <extra-includes>
+      <include file-name="fontprivate.h" location="local"/>
+    </extra-includes>
     <custom-constructor>
         return new QFontMetricsF(*copy);
     </custom-constructor>
@@ -1163,6 +1170,9 @@
    <value-type name="QTextOption::Tab" />
 
   <value-type name="QFontMetrics" delete-in-main-thread="yes" expense-cost="1" expense-limit="1000">
+    <extra-includes>
+      <include file-name="fontprivate.h" location="local"/>
+    </extra-includes>
     <custom-constructor>
         return new QFontMetrics(*copy);
     </custom-constructor>
@@ -1623,11 +1633,6 @@
         </modify-argument>
     </modify-function>
   </object-type>
-  <object-type name="QIconEngine">
-    <modify-function signature="paint(QPainter*,QRect,QIcon::Mode,QIcon::State)">
-        <modify-argument index="1" invalidate-after-use="yes" />
-    </modify-function>
-  </object-type>
   <object-type name="QIconEngineV2">
     <modify-function signature="read(QDataStream&amp;)">
         <modify-argument index="1" invalidate-after-use="yes" />
@@ -1643,6 +1648,22 @@
         </modify-argument>
     </modify-function>
   </object-type>
+
+  <object-type name="QIconEngine">
+    <modify-function signature="paint(QPainter*,QRect,QIcon::Mode,QIcon::State)">
+        <modify-argument index="1" invalidate-after-use="yes" />
+    </modify-function>
+    <modify-function signature="read(QDataStream&amp;)" remove="all"/>
+    <modify-function signature="write(QDataStream&amp;)const" remove="all"/>
+
+    <modify-function signature="virtual_hook(int,void*)" remove="all"/>
+    <modify-function signature="clone()const">
+        <modify-argument index="return">
+            <define-ownership class="shell" owner="c++"/>
+        </modify-argument>
+    </modify-function>
+  </object-type>
+
   <object-type name="QImageWriter">
   <modify-function signature="setDevice(QIODevice*)">
     <modify-argument index="1">
@@ -5114,12 +5135,7 @@
   <object-type name="QGraphicsBlurEffect" />
   <object-type name="QGraphicsColorizeEffect" />
   <object-type name="QGraphicsDropShadowEffect" />
-  <object-type name="QGraphicsEffect">
-      <extra-includes>
-          <include file-name="QGraphicsEffectSource" location="global"/>
-      </extra-includes>
-  </object-type>
-  <object-type name="QGraphicsEffectSource" />
+  <object-type name="QGraphicsEffect"/>
   <object-type name="QGraphicsGrayscaleEffect" />
   <object-type name="QGraphicsObject">
     <!-- Duplicate function to QObject::children() to override accidental shadowing which is not present in Jambi -->
