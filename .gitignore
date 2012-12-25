@@ -2,6 +2,7 @@
 Makefile
 Makefile.Debug
 Makefile.Release
+*.o
 *.log
 *.tmp
 /generator/generator
@@ -12,4 +13,5 @@ Makefile.Release
 /qtbindings/*/Makefile
 /qtbindings/*/Makefile.Debug
 /qtbindings/*/Makefile.Release
+qtbindings/qs_eval/qs_eval
 /plugins
