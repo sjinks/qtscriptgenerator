@@ -6,7 +6,7 @@
 
   <enum-type name="QNetworkProxy::Capability" flags="QNetworkProxy::Capabilities"/>
   <enum-type name="QAbstractSocket::NetworkLayerProtocol"/>
-  <enum-type name="QAbstractSocket::PauseMode" flags="QAbstractSocket::PauseMode"/>
+  <enum-type name="QAbstractSocket::PauseMode" flags="QAbstractSocket::PauseModes"/>
   <enum-type name="QAbstractSocket::BindFlag" flags="QAbstractSocket::BindMode"/>
   <enum-type name="QNetworkProxyQuery::QueryType"/>
   <enum-type name="QAbstractSocket::SocketError"/>
