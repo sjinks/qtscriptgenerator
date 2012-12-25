@@ -6,3 +6,10 @@ Makefile.Release
 *.tmp
 /generator/generator
 /generator/release
+/qtbindings/*/debug/
+/qtbindings/*/release/
+/qtbindings/Makefile
+/qtbindings/*/Makefile
+/qtbindings/*/Makefile.Debug
+/qtbindings/*/Makefile.Release
+/plugins
