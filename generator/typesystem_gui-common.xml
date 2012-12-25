@@ -28,6 +28,7 @@
   <rejection class="QPainterPathPrivate"/>
   <rejection class="QRegionData"/>
   <rejection class="QStandardItemEditorCreator"/>
+  <rejection class="QStyleOptionProgressBarV2"/>
   <rejection class="QStyleOptionQ3DockWindow"/>
   <rejection class="QStyleOptionQ3ListView"/>
   <rejection class="QStyleOptionQ3ListViewItem"/>
@@ -335,8 +336,6 @@
   <enum-type name="QStyleOptionMenuItem::StyleOptionVersion"/>
   <enum-type name="QStyleOptionProgressBar::StyleOptionType"/>
   <enum-type name="QStyleOptionProgressBar::StyleOptionVersion"/>
-  <enum-type name="QStyleOptionProgressBarV2::StyleOptionType"/>
-  <enum-type name="QStyleOptionProgressBarV2::StyleOptionVersion"/>
   <enum-type name="QStyleOptionRubberBand::StyleOptionType"/>
   <enum-type name="QStyleOptionRubberBand::StyleOptionVersion"/>
   <enum-type name="QStyleOptionSizeGrip::StyleOptionType"/>
@@ -538,6 +537,9 @@
 
 
   <value-type name="QTransform">
+    <extra-includes>
+      <include file-name="QTouchDevice" location="global"/>
+    </extra-includes>
     <modify-function signature="operator=(QTransform)" remove="all"/>
     <modify-function signature="map(int,int,int*,int*)const" remove="all"/>
     <modify-function signature="map(qreal,qreal,qreal*,qreal*)const" remove="all"/>
@@ -577,11 +579,6 @@
   <value-type name="QStyleOptionHeader" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionHeader::Type &amp;&amp; %1-&gt;version == QStyleOptionHeader::Version"/>
   <value-type name="QStyleOptionMenuItem" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionMenuItem::Type &amp;&amp; %1-&gt;version == QStyleOptionMenuItem::Version"/>
   <value-type name="QStyleOptionProgressBar" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionProgressBar::Type &amp;&amp; %1-&gt;version == QStyleOptionProgressBar::Version"/>
-
-  <value-type name="QStyleOptionProgressBarV2" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionProgressBarV2::Type &amp;&amp; %1-&gt;version == QStyleOptionProgressBarV2::Version">
-    <modify-function signature="operator=(QStyleOptionProgressBar)" remove="all"/>
-  </value-type>
-
   <value-type name="QStyleOptionRubberBand" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionRubberBand::Type &amp;&amp; %1-&gt;version == QStyleOptionRubberBand::Version"/>
   <value-type name="QStyleOptionSlider" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionSlider::Type &amp;&amp; %1-&gt;version == QStyleOptionSlider::Version"/>
   <value-type name="QStyleOptionSpinBox" delete-in-main-thread="yes" polymorphic-id-expression="%1-&gt;type == QStyleOptionSpinBox::Type &amp;&amp; %1-&gt;version == QStyleOptionSpinBox::Version"/>
@@ -5158,7 +5155,11 @@
   <object-type name="QTouchEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::TouchBegin || %1-&gt;type() == QEvent::TouchUpdate || %1-&gt;type() == QEvent::TouchEnd" />
   <enum-type name="QTouchEvent::TouchPoint::InfoFlag"/>
 
-  <object-type name="QTouchDevice"/>
+  <object-type name="QTouchDevice">
+    <inject-code class="native" position="beginning">
+    Q_DECLARE_METATYPE(const QTouchDevice*)
+    </inject-code>
+  </object-type>
   <enum-type name="QTouchDevice::DeviceType"/>
   <enum-type name="QTouchDevice::CapabilityFlag" flags="QTouchDevice::Capabilities"/>
   <object-type name="QWindow"/>
