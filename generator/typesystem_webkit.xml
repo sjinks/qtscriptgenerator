@@ -94,7 +94,11 @@
     <object-type name="QWebInspector"/>
 
     <value-type name="QWebPluginInfo"/>
-    <value-type name="QWebElement"/>
+    <value-type name="QWebElement">
+        <extra-includes>
+            <include file-name="QWebFrame" location="global"/>
+        </extra-includes>
+    </value-type>
     <value-type name="QWebPluginFactory::Plugin"/>
     <value-type name="QWebPluginFactory::MimeType"/>
 <!-- QtScript: disabled until we can support custom constructor -->
