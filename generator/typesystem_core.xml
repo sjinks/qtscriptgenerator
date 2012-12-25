@@ -67,6 +67,8 @@
   <rejection class="" enum-name="QtValidLicenseForOpenVGModule"/>
   <rejection class="" enum-name="QtValidLicenseForDeclarativeModule"/>
 
+  <rejection class="QCoreApplication" enum-name="enum_1"/>
+
   <rejection class="QtConcurrent" enum-name="enum_1"/>
   <rejection class="QtConcurrent" function-name="operator|"/>
 

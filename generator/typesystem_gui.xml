@@ -5,6 +5,7 @@
 
   <rejection class="*" field-name="d_ptr"/>
   <rejection class="*" field-name="d"/>
+  <rejection class="QSurface" field-name="m_reserved"/>
 
   <rejection class="QGenericMatrix"/>  
   <rejection class="QPixmapFilterPrivate"/>
@@ -127,7 +128,8 @@
   <enum-type name="QAccessible::Method"/>
   <enum-type name="QAccessible::RelationFlag" flags="QAccessible::Relation"/>
   <enum-type name="QAccessible::Role"/>
-  <enum-type name="QAccessible::StateFlag" flags="QAccessible::State"/>
+  <enum-type name="QAccessible::State"/>
+<!--  <enum-type name="QAccessible::StateFlag" flags="QAccessible::State"/> --> <!--### Not in Qt 5 -->
   <enum-type name="QAccessible::Text"/>
   <enum-type name="QDesktopServices::StandardLocation"/>
   <enum-type name="QDirModel::Roles"/>
@@ -517,15 +519,14 @@
     <reject-enum-value name="LastFontProperty"/>
   </enum-type>
 
- <enum-type name="QAction::Priority"/>
- <enum-type name="QAction::SoftKeyRole"/>
+  <enum-type name="QAction::Priority"/>
+  <enum-type name="QAction::SoftKeyRole"/>
   <enum-type name="QGraphicsEffect::ChangeFlag" flags="QGraphicsEffect::ChangeFlags"/>
   <enum-type name="QGraphicsItem::PanelModality"/>
   <enum-type name="QPinchGesture::WhatChange" flags="QPinchGesture::WhatChanged"/>
   <enum-type name="QStyle::RequestSoftwareInputPanel"/>
   <enum-type name="QSwipeGesture::SwipeDirection"/>
   <enum-type name="QTouchEvent::DeviceType"/>
-  
 
   <value-type name="QPixmapCache::Key"/>
   <value-type name="QTileRules"/>
@@ -808,6 +809,7 @@
   </value-type>
 
   <value-type name="QIcon" delete-in-main-thread="yes">
+    <include file-name="QIconEngine" location="global"/>
     <modify-function signature="operator=(QIcon)" remove="all"/>
     <modify-function signature="serialNumber()const" remove="all"/> <!--### Obsolete in 4.3-->
     <modify-function signature="QIcon(QIconEngineV2 *)">
@@ -4301,6 +4303,7 @@
   <object-type name="QFileDialog">
     <extra-includes>
         <include file-name="QUrl" location="global"/>
+        <include file-name="QAbstractProxyModel" location="global"/>
     </extra-includes>
 <!--
     <modify-function signature="getOpenFileName(QWidget*,QString,QString,QString,QString*,QFlags&lt;QFileDialog::Option&gt;)">
@@ -4670,6 +4673,7 @@
         <include file-name="QTextBlock" location="global"/>
         <include file-name="QTextFormat" location="global"/>
         <include file-name="QTextCursor" location="global"/>
+        <include file-name="QAbstractTextDocumentLayout" location="global"/>
     </extra-includes>
     <modify-function signature="redo(QTextCursor*)">
         <access modifier="private"/>
@@ -5585,7 +5589,11 @@
   <object-type name="QGraphicsBlurEffect"/>
   <object-type name="QGraphicsColorizeEffect"/>
   <object-type name="QGraphicsDropShadowEffect"/>
-  <object-type name="QGraphicsEffect"/>
+  <object-type name="QGraphicsEffect">
+      <extra-includes>
+          <include file-name="QGraphicsEffectSource" location="global"/>
+      </extra-includes>
+  </object-type>
   <object-type name="QGraphicsEffectSource"/>
   <object-type name="QGraphicsGrayscaleEffect"/>
   <object-type name="QGraphicsObject">
@@ -5607,7 +5615,17 @@
 <!--  <object-type name="QProxyStyle" /> -->
   <object-type name="QSwipeGesture"/>
   <object-type name="QTouchEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::TouchBegin || %1-&gt;type() == QEvent::TouchUpdate || %1-&gt;type() == QEvent::TouchEnd"/>
-  
+  <enum-type name="QTouchEvent::TouchPoint::InfoFlag"/>
+
+  <object-type name="QTouchDevice"/>
+  <enum-type name="QTouchDevice::DeviceType"/>
+  <enum-type name="QTouchDevice::CapabilityFlag" flags="QTouchDevice::Capabilities"/>
+  <object-type name="QWindow"/>
+  <enum-type name="QWindow::AncestorMode"/>
+  <object-type name="QSurface"/>
+  <enum-type name="QSurface::SurfaceType"/>
+  <enum-type name="QSurface::SurfaceClass"/>
+
   <enum-type name="QGesture::GestureCancelPolicy"/>
   <enum-type name="QGraphicsEffect::PixmapPadMode"/>
   <enum-type name="QGraphicsBlurEffect::BlurHint" flags="QGraphicsBlurEffect::BlurHints"/>
