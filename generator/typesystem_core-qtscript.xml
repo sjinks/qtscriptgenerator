@@ -614,6 +614,7 @@
 
   <object-type name="QFile">
     <modify-function signature="open(int,QFlags&lt;QIODevice::OpenModeFlag&gt;)" remove="all"/>
+    <modify-function signature="open(int,QFlags&lt;QIODevice::OpenModeFlag&gt;,QFlags&lt;QFileDevice::FileHandleFlag&gt;)" remove="all"/>
     <modify-function signature="decodeName(const char*)" remove="all"/>
     <modify-function signature="map(qint64,qint64,QFile::MemoryMapFlags)" remove="all"/>
     <modify-function signature="unmap(uchar*)" remove="all"/>
