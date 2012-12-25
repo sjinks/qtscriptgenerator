@@ -512,7 +512,7 @@
   <enum-type name="QTimeLine::Direction"/>
   <enum-type name="QTimeLine::State"/>
   <enum-type name="QUrl::ComponentFormattingOption" flags="QUrl::ComponentFormattingOptions"/>
-<!--  <enum-type name="QUrl::FormattingOption" flags="QUrl::FormattingOptions"/> --> <!--### Not ijn Qt 5.0 -->
+<!--  <enum-type name="QUrl::FormattingOption" flags="QUrl::FormattingOptions"/> --> <!--### Not in Qt 5.0 -->
   <enum-type name="QUrl::ParsingMode"/>
   <enum-type name="QUrl::UrlFormattingOption"/>
   <enum-type name="QUuid::Variant"/>
@@ -1390,7 +1390,6 @@
 
   <object-type name="QSystemSemaphore" />
 
-<!--
   <namespace-type name="QtConcurrent" target-type="class" />
 
   <value-type name="QFuture" generate="no">
@@ -1412,11 +1411,7 @@
   <object-type name="QFutureWatcher" generate="no">
     <modify-function signature="future()const" remove="all" />
   </object-type>
-  <object-type name="QtScriptFutureWatcher" java-name="QFutureWatcher" generic-class="yes">
-    <inject-code class="native" position="beginning">
-    typedef QFutureWatcher QtScriptFutureWatcher;
-    </inject-code>
-  </object-type>
+  <object-type name="QtScriptFutureWatcher" java-name="QFutureWatcher" generic-class="yes"/>
 
   <object-type name="QFutureSynchronizer" generate="no" />
   <object-type name="QtScriptFutureSynchronizer" generic-class="yes" java-name="QFutureSynchronizer" />
@@ -1428,7 +1423,6 @@
   </object-type>
   <object-type name="QtScriptFutureIterator" generic-class="yes" java-name="QFutureIterator" />
   <object-type name="QRunnable" />
--->
 
     <value-type name="QXmlStreamAttribute"/>
     <value-type name="QXmlStreamAttributes"/>
