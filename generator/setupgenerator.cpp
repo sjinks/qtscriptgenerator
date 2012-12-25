@@ -255,18 +255,21 @@ void SetupGenerator::generate()
         }
 
         {
-            FileOut pluginFile(m_out_dir + "/generated_cpp/" + packName + "/plugin.cpp");
+            FileOut pluginFile(m_out_dir + "/generated_cpp/" + packName + "/plugin.h");
             QTextStream &s = pluginFile.stream;
 
             if (FileOut::license)
                 writeQtScriptQtBindingsLicense(s);
+
+            s << "#ifndef PLUGIN_H" << endl
+              << "#define PLUGIN_H" << endl << endl;
 
             s << "#include <QtScript/QScriptExtensionPlugin>" << endl
               << "#include <QtScript/QScriptValue>" << endl
               << "#include <QtScript/QScriptEngine>" << endl << endl;
 
             // declare the init function
-            s << "void qtscript_initialize_" << packName << "_bindings(QScriptValue &);" << endl << endl;
+            s << "Q_DECL_HIDDEN extern void qtscript_initialize_" << packName << "_bindings(QScriptValue &);" << endl << endl;
 
             // plugin class declaration
             s << "class " << packName << "_ScriptPlugin : public QScriptExtensionPlugin" << endl
@@ -279,7 +282,22 @@ void SetupGenerator::generate()
               << "    QStringList keys() const;" << endl
               << "    void initialize(const QString &key, QScriptEngine *engine);" << endl
               << "};" << endl
-              << "" << endl;
+              << "" << endl
+              << "#endif // PLUGIN_H" << endl;
+
+            if (pluginFile.done())
+                ++m_num_generated_written;
+            ++m_num_generated;
+        }
+
+        {
+            FileOut pluginFile(m_out_dir + "/generated_cpp/" + packName + "/plugin.cpp");
+            QTextStream &s = pluginFile.stream;
+
+            if (FileOut::license)
+                writeQtScriptQtBindingsLicense(s);
+
+            s << "#include \"plugin.h\"" << endl << endl;
 
             // keys()
             s << "QStringList " << packName << "_ScriptPlugin::keys() const" << endl
