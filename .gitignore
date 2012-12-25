@@ -1,3 +1,4 @@
+/doc/*.html
 /generated_cpp
 Makefile
 Makefile.Debug
