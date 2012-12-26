@@ -269,7 +269,7 @@ void SetupGenerator::generate()
               << "#include <QtScript/QScriptEngine>" << endl << endl;
 
             // declare the init function
-            s << "Q_DECL_HIDDEN extern void qtscript_initialize_" << packName << "_bindings(QScriptValue &);" << endl << endl;
+            s << "Q_DECL_HIDDEN void qtscript_initialize_" << packName << "_bindings(QScriptValue &);" << endl << endl;
 
             // plugin class declaration
             s << "class " << packName << "_ScriptPlugin : public QScriptExtensionPlugin" << endl
