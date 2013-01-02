@@ -1083,6 +1083,10 @@
     <!--### Obsolete in 4.3-->
   </value-type>
 
+  <value-type name="QUrlQuery">
+    <modify-function signature="operator=(QUrlQuery)" remove="all"/>
+  </value-type>
+
   <value-type name="QRegExp">
     <extra-includes>
       <include file-name="QStringList" location="global"/>
