@@ -14,7 +14,7 @@
 	<object-type name="QAbstractNetworkCache"/>
 
 	<object-type name="QAbstractSocket">
-		<modify-function signature="error()" rename="getError()"/>
+		<modify-function signature="error() const" rename="getError"/>
 	</object-type>
 	<enum-type name="QAbstractSocket::BindFlag" flags="QAbstractSocket::BindMode"/>
 	<enum-type name="QAbstractSocket::NetworkLayerProtocol" />
@@ -156,7 +156,7 @@
 	<enum-type name="QNetworkProxyQuery::QueryType"/>
 
 	<object-type name="QNetworkReply">
-		<modify-function signature="error()" rename="getError()"/>
+		<modify-function signature="error() const" rename="getError"/>
 	</object-type>
 	<enum-type name="QNetworkReply::NetworkError"/>
 
