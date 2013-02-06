@@ -66,7 +66,9 @@
 	</object-type>
 	<enum-type name="QLocalServer::SocketOption" flags="QLocalServer::SocketOptions"/>
 
-	<object-type name="QLocalSocket"/>
+	<object-type name="QLocalSocket">
+		<modify-function signature="error() const" rename="getError"/>
+	</object-type>
 	<enum-type name="QLocalSocket::LocalSocketError"/>
 	<enum-type name="QLocalSocket::LocalSocketState"/>
 
@@ -169,7 +171,9 @@
 	<enum-type name="QNetworkRequest::LoadControl"/>
 	<enum-type name="QNetworkRequest::Priority"/>
 
-	<object-type name="QNetworkSession"/>
+	<object-type name="QNetworkSession">
+		<modify-function signature="error() const" rename="getError"/>
+	</object-type>
 	<enum-type name="QNetworkSession::SessionError"/>
 	<enum-type name="QNetworkSession::State"/>
 	<enum-type name="QNetworkSession::UsagePolicy" flags="QNetworkSession::UsagePolicies" flags-known="yes"/>
