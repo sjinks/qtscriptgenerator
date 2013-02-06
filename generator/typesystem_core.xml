@@ -1663,6 +1663,7 @@
     <!--### Obsolete in 4.3-->
     <modify-function signature="setReadChannelMode(QProcess::ProcessChannelMode)" remove="all"/>
     <!--### Obsolete in 4.3-->
+    <modify-function signature="error() const" rename="getError"/>
   </object-type>
 
   <object-type name="QSignalMapper">
