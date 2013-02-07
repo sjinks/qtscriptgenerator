@@ -28,6 +28,10 @@
 		<modify-function signature="operator=(QAuthenticator)" remove="all"/>
 	</value-type>
 
+	<object-type name="QDnsLookup"/>
+	<enum-type name="QDnsLookup::Error"/>
+	<enum-type name="QDnsLookup::Type"/>
+
 	<value-type name="QHostAddress">
 		<modify-function signature="QHostAddress(unsigned char*)" remove="all"/>
 		<modify-function signature="setAddress(unsigned char*)" remove="all"/>
