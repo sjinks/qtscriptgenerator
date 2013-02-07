@@ -14,6 +14,7 @@ Makefile.Release
 /qtbindings/*/Makefile
 /qtbindings/*/Makefile.Debug
 /qtbindings/*/Makefile.Release
-qtbindings/qs_eval/qs_eval
+/qtbindings/qs_eval/qs_eval
 /plugins
+/tools/qsexec/qsexec
 *.pro.user
