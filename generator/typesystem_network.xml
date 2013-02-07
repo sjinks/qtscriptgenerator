@@ -209,6 +209,10 @@
 	</value-type>
 	<enum-type name="QSslCertificate::SubjectInfo"/>
 
+	<value-type name="QSslCertificateExtension">
+		<modify-function signature="operator=(QSslCertificateExtension)" remove="all"/>
+	</value-type>
+
 	<value-type name="QSslCipher"/>
 
 	<value-type name="QSslConfiguration"/>
