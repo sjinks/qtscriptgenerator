@@ -654,8 +654,13 @@
     <reject-enum-value name="WA_MacMetalStyle"/>
   </enum-type>
 
-  <value-type name="QProcessEnvironment" />
+  <value-type name="QProcessEnvironment"/>
   <value-type name="QBasicTimer"/>
+  <value-type name="QElapsedTimer">
+    <modify-function signature="operator==(QElapsedTimer)" remove="all"/>
+    <modify-function signature="operator!=(QElapsedTimer)" remove="all"/>
+  </value-type>
+
   <value-type name="QByteArrayMatcher">
     <modify-function signature="operator=(QByteArrayMatcher)" remove="all"/>
   </value-type>
