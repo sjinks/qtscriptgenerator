@@ -32,6 +32,26 @@
 	<enum-type name="QDnsLookup::Error"/>
 	<enum-type name="QDnsLookup::Type"/>
 
+	<value-type name="QDnsDomainNameRecord">
+		<modify-function signature="operator=(QDnsDomainNameRecord)" remove="all"/>
+	</value-type>
+
+	<value-type name="QDnsHostAddressRecord">
+		<modify-function signature="operator=(QDnsHostAddressRecord)" remove="all"/>
+	</value-type>
+
+	<value-type name="QDnsMailExchangeRecord">
+		<modify-function signature="operator=(QDnsMailExchangeRecord)" remove="all"/>
+	</value-type>
+
+	<value-type name="QDnsServiceRecord">
+		<modify-function signature="operator=(QDnsServiceRecord)" remove="all"/>
+	</value-type>
+
+	<value-type name="QDnsTextRecord">
+		<modify-function signature="operator=(QDnsTextRecord)" remove="all"/>
+	</value-type>
+
 	<value-type name="QHostAddress">
 		<modify-function signature="QHostAddress(unsigned char*)" remove="all"/>
 		<modify-function signature="setAddress(unsigned char*)" remove="all"/>
