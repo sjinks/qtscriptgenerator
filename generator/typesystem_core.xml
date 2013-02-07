@@ -698,6 +698,7 @@
     <modify-function signature="operator==(QElapsedTimer)" remove="all"/>
     <modify-function signature="operator!=(QElapsedTimer)" remove="all"/>
   </value-type>
+  <enum-type name="QElapsedTimer::ClockType"/>
 
   <value-type name="QByteArrayMatcher">
     <modify-function signature="operator=(QByteArrayMatcher)" remove="all"/>
