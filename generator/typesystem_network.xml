@@ -118,17 +118,23 @@
 
 	<value-type name="QNetworkAddressEntry">
 		<modify-function signature="operator=(QNetworkAddressEntry)" remove="all"/>
+		<modify-function signature="operator==(QNetworkAddressEntry)" remove="all"/>
+		<modify-function signature="operator!=(QNetworkAddressEntry)" remove="all"/>
 	</value-type>
 
 	<value-type name="QNetworkCacheMetaData">
-		<modify-function signature="operator=(QNetworkCacheMetaData)" remove="all" />
+		<modify-function signature="operator=(QNetworkCacheMetaData)" remove="all"/>
+		<modify-function signature="operator==(QNetworkCacheMetaData)" remove="all"/>
+		<modify-function signature="operator!=(QNetworkCacheMetaData)" remove="all"/>
 		<extra-includes>
 			<include file-name="QDateTime" location="global"/>
 		</extra-includes>
 	</value-type>
 
 	<value-type name="QNetworkConfiguration">
-		<modify-function signature="operator=(QNetworkConfiguration)" remove="all" />
+		<modify-function signature="operator=(QNetworkConfiguration)" remove="all"/>
+		<modify-function signature="operator==(QNetworkConfiguration)" remove="all"/>
+		<modify-function signature="operator!=(QNetworkConfiguration)" remove="all"/>
 	</value-type>
 	<enum-type name="QNetworkConfiguration::BearerType"/>
 	<enum-type name="QNetworkConfiguration::Purpose"/>
@@ -144,6 +150,8 @@
 			<include file-name="QDateTime" location="global"/>
 		</extra-includes>
 		<modify-function signature="operator=(QNetworkCookie)" remove="all"/>
+		<modify-function signature="operator==(QNetworkCookie)" remove="all"/>
+		<modify-function signature="operator!=(QNetworkCookie)" remove="all"/>
 	</value-type>
 	<enum-type name="QNetworkCookie::RawForm"/>
 
@@ -164,6 +172,8 @@
 
 	<value-type name="QNetworkProxy">
 		<modify-function signature="operator=(QNetworkProxy)" remove="all"/>
+		<modify-function signature="operator==(QNetworkProxy)" remove="all"/>
+		<modify-function signature="operator!=(QNetworkProxy)" remove="all"/>
 	</value-type>
 	<enum-type name="QNetworkProxy::Capability" flags="QNetworkProxy::Capabilities"/>
 	<enum-type name="QNetworkProxy::ProxyType"/>
@@ -178,6 +188,8 @@
 
 	<value-type name="QNetworkProxyQuery">
 		<modify-function signature="operator=(QNetworkProxyQuery)" remove="all" />
+		<modify-function signature="operator==(QNetworkProxyQuery)" remove="all" />
+		<modify-function signature="operator!=(QNetworkProxyQuery)" remove="all" />
 	</value-type>
 	<enum-type name="QNetworkProxyQuery::QueryType"/>
 
@@ -188,6 +200,8 @@
 
 	<value-type name="QNetworkRequest">
 		<modify-function signature="operator=(QNetworkRequest)" remove="all"/>
+		<modify-function signature="operator==(QNetworkRequest)" remove="all"/>
+		<modify-function signature="operator!=(QNetworkRequest)" remove="all"/>
 	</value-type>
 	<enum-type name="QNetworkRequest::Attribute" extensible="yes"/>
 	<enum-type name="QNetworkRequest::CacheLoadControl"/>
